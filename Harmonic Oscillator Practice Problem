@@ -1,0 +1,18 @@
+(a) Prove that $$ [X\hat, P\hat] = i\hbar $$
+
+pip install qutip
+
+from qutip import create
+from qutip import destroy
+import numpy as np
+from qutip import fock
+from qutip import commutator
+
+fock(8,7)
+a=create(N=8)
+x = (a + a.dag()) / np.sqrt(2)
+hbar=1
+p = -1j * hbar * (a - a.dag()) / np.sqrt(2)
+x*p
+p*x
+x*p-p*x
